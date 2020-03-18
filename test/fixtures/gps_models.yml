@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle: 
+  latitude: 9.99
+  longitude: 9.99
+  sent_at: 2020-03-18 09:19:50
+
+two:
+  vehicle: 
+  latitude: 9.99
+  longitude: 9.99
+  sent_at: 2020-03-18 09:19:50
