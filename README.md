@@ -1,5 +1,8 @@
 # README
 
+*	name: Sixto Guerra Urbina
+* 	email: sixto.guerra1982@gmail.com 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
