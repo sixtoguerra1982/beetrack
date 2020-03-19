@@ -1,6 +1,44 @@
-<% @points.each do |p| %>
-	<p>Idenfifier: <%= p["vehicle"] %></p> 
-	<p>Sent_at: <%= p["sent_at"]  %></p> 
-	<p>Longitude: <%= p["longitude"]  %></p> 
-	<p>Latitude: <%= p["latitude"]  %></p> 
-<% end %>
+
+<ul>
+	<li>
+		<h1>EndPoint /Show</h1>
+	</li>
+</ul>
+
+<div class="padre-map">
+	<div id = 'map'>
+	</div>
+</div>
+
+<script>
+  	
+  	var map = L.map('map').setView([-33.45, -70.64],14);
+
+	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+	maxZoom: 18
+	}).addTo(map);
+
+	L.control.scale().addTo(map);
+
+	<% @points.each do |p| %>
+		var Long = <%= p["longitude"] %>;
+		var Lati = <%= p["latitude"] %>;
+		var cadena = new String('<%=p["vehicle"]%>')
+		var cadena2 = new String('<%=p["sent_at"]%>')
+		var Title =  cadena + ' | ' + Lati + ',' + Long + ' | ' + cadena2;
+		L.marker([Lati, Long],{draggable: false, title: Title, riseOnHover: true}).addTo(map);
+	<% end %> 	
+
+</script>
+
+<div class="vehicles">
+	<% @points.each do |p| %>
+		<div class="vehicle">
+			<p class="head-vehicle">Identifier: <%= p["vehicle"] %></p> 
+			<p>Sent_at: <%= p["sent_at"]  %></p> 
+			<p>Longitude: <%= p["longitude"]  %></p> 
+			<p>Latitude: <%= p["latitude"]  %></p> 
+		</div>
+	<% end %>
+</div>

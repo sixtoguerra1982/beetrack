@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+	margin: 0px;
+    background: #173B3C;
+    color: #ffffff;
+} 
+
+#map { 
+    width: 100%;
+    height: 580px;
+    box-shadow: 5px 5px 5px #888;
+ }
+
+ .head-vehicle{
+ 	border-bottom: 1px solid black;
+ }
+
+ .vehicle {
+ 	display: inline-block;
+ 	padding: 0 1rem;
+ 	border: 1px solid black;
+ 	margin: 10px auto;
+ 	border-radius: 5px;
+ }
+
+ .vehicles{
+ 	padding: 3px;
+ 	text-align: center;
+ }
+
+ .padre-map{
+ 	margin: 10px auto;
+ 	padding: 10px;
+ }
+
+ h1{
+ 	padding-left: 100px;
+ }
