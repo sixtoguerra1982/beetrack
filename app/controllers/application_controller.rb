@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
 		@vehicles.each do |v|
 			if v.GpsModels.present?
-				h = {"vehicle" => v.identifier, "sent_at" => v.GpsModels.last.sent_at, "latitude" => v.GpsModels.last.latitude, "longitude" => v.GpsModels.last.longitude}
+				h = {"vehicle" => v.identifier.chomp.to_s, "sent_at" => v.GpsModels.last.sent_at, "latitude" => v.GpsModels.last.latitude, "longitude" => v.GpsModels.last.longitude}
 				@points.push h
 			end
 		end
